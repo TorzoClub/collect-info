@@ -60,6 +60,11 @@ const stream = fs.createReadStream('input.txt')
 Form.start(stream).then(obj => console.log(obj))
 ```
 
+运行结果：
+
+![other-stream](./resource/other-stream.png)
+
+
 # 覆盖率测试
 
 ```
