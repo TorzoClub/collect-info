@@ -1,3 +1,17 @@
+# collect-info
+
+[![build status][travis-image]][travis-url]
+[![codecov.io][codecov-image]][codecov-url]
+[![node version][node-image]][node-url]
+
+[travis-image]: https://api.travis-ci.org/TorzoClub/collect-info.svg?branch=master
+[travis-url]: https://travis-ci.org/TorzoClub/collect-info
+[codecov-image]: https://img.shields.io/codecov/c/github/TorzoClub/collect-info/master.svg
+[codecov-url]: https://codecov.io/github/TorzoClub/collect-info?branch=master
+[node-image]: https://img.shields.io/badge/node.js-%3E=_6.x-green.svg
+[node-url]: http://nodejs.org/download/
+
+
 # 安装
 
 ```
