@@ -24,7 +24,7 @@ class Collect {
 		return new Promise((resolve, reject) => {
 
 			this.rl.setPrompt(struct[cursor].prompt || `[${struct[cursor].name}]输入： `)
-			process.stdout.write(struct[cursor].prompt || `[${struct[cursor].name}]输入： `)
+			this.rl.prompt();
 
 			this.rl.on('line', line => {
 				const current = struct[cursor];
@@ -66,7 +66,7 @@ class Collect {
 					resolve(question)
 				} else {
 					this.rl.setPrompt(struct[cursor].prompt || `[${struct[cursor].name}]输入： `)
-					process.stdout.write(struct[cursor].prompt || `[${struct[cursor].name}]输入： `)
+					this.rl.prompt();
 				}
 			})
 			this.rl.on('close', () => {
