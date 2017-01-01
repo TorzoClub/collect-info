@@ -101,4 +101,34 @@ describe('收集', function () {
 			})
 			.catch(err => { console.error(err); throw err })
 	})
+
+	it('空值的情况', done => {
+		const Schema = new Collect([
+			{ name: 'empty1' },
+			{ name: 'empty2' },
+			{ name: 'empty3' }
+		]);
+		Schema.start(fs.createReadStream(path.join(__dirname, 'empty.txt')))
+			.then(obj => {
+				should(obj.empty1).equal('abc');
+				should(obj.empty2).equal('cba');
+				should(obj.empty3).equal('ttt');
+				done()
+			})
+			.catch(err => { console.error(err); throw err })
+	})
+	it('空值默认值', done => {
+		const Schema = new Collect([
+			{ name: 'empty1' },
+			{ name: 'empty2', default: 'de' }
+		]);
+		Schema.start(fs.createReadStream(path.join(__dirname, 'empty.txt')))
+			.then(obj => {
+				console.log(obj);
+				should(obj.empty1).equal('abc');
+				should(obj.empty2).equal('de');
+				done()
+			})
+			.catch(err => { console.error(err); throw err })
+	})
 })

@@ -34,10 +34,20 @@ class Collect {
 					current.type = self.DefaultType;
 				}
 
-				if (current.type === Number.isInteger) {
+				/* 如果是空的 */
+				if (!line.length) {
+					if (!current.hasOwnProperty('default')) {
+						process.stdout.write(current.catch || '不能取空值：');
+						return ;
+					} else {
+						++cursor;
+						question[current.name] = current.default;
+					}
+				}
+				else if (current.type === Number.isInteger) {
 					let num = Number(line.trim());
 					if (!Number.isInteger(num)) {
-						process.stdout.write(current.catch || '需要整数类型');
+						process.stdout.write(current.catch || '需要整数类型：');
 						return ;
 					} else {
 						++cursor;
@@ -60,7 +70,7 @@ class Collect {
 					++cursor;
 					question[current.name] = line;
 				}
-
+				
 				if (cursor === struct.length) {
 					this.rl.close();
 					resolve(question)
