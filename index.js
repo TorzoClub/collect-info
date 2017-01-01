@@ -69,6 +69,9 @@ class Collect {
 					process.stdout.write(struct[cursor].prompt || `[${struct[cursor].name}]输入： `)
 				}
 			})
+			this.rl.on('close', () => {
+				process.stdout.write('\n');
+			})
 		})
 	}
 }
