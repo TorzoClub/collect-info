@@ -30,6 +30,12 @@ Form.start()
 
 ![run result](./resource/run.png)
 
+# 安装
+
+```
+npm install collect-info
+```
+
 # 覆盖率测试
 
 ```
