@@ -49,13 +49,12 @@ World
 run.js:
 ```javascript
 const Collect = require('collect-info')
-const fs = require('fs')
 
 const Schema = [{ name: 'a' }, { name: 'b' }]
 
 const Form = new Collect(Schema)
 
-const stream = fs.createReadStream('input.txt')
+const stream = require('fs').createReadStream('input.txt')
 
 Form.start(stream).then(obj => console.log(obj))
 ```
