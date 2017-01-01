@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - 6.1.0
+
+install:
+  - npm install -g codecov
+  - npm install -g istanbul
+
+script:
+  - npm install
+  - istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec
+  - codecov
+
+after_success: npm i codecov && codecov
+
+branches:
+  only:
+    - master
