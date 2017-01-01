@@ -1,10 +1,14 @@
 {
   "name": "collect-info",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "collect infomation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+	"repository": {
+    "type": "git",
+    "url": "git+https://github.com/TorzoClub/collect-info.git"
   },
   "author": "vec",
   "license": "MIT",
