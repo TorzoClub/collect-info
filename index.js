@@ -48,7 +48,7 @@ class Collect {
 					/* process by Number */
 					let num = Number(line.trim());
 					if (isNaN(num)) {
-						process.stdout.write(current.catch || '需要数字类型');
+						process.stdout.write(current.catch || '需要数字类型：');
 						return ;
 					} else {
 						++cursor;
@@ -73,7 +73,7 @@ class Collect {
 	}
 }
 
-Object.assign(Collect.prototype, {
+Object.assign(Collect, {
 	DefaultType: String,
 });
 
